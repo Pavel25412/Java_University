@@ -20,4 +20,13 @@ public class Segment {
                 "x2=\"" + b.x + "\" y2=\"" + b.y +"\" " +
                 "style=\"stroke:red;stroke-width:4\" />";
     }
+
+    public static Segment maxLength(Segment[] segments) {
+        Segment result = null;
+
+        for(Segment seg: segments) {
+            if ( result == null || seg.length() > result.length()) result = seg;
+        }
+        return result;
+    }
 }
