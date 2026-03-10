@@ -46,5 +46,6 @@ public class Main {
         // metodę statyczną maxLength wywołujemy za pomocą nazwy klasy
         Segment max = Segment.maxLength(odcinki);
         System.out.println("najdluższy: " + max);
+        //
     }
 }
