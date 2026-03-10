@@ -17,31 +17,21 @@ public class Main {
         System.out.println(p2.toSvg());
 
         Segment s1 = new Segment();
-        s1.a = p1;
-        s1.b = p2;
+        s1.setA(p1);
+        s1.setB(p2);
         System.out.println("s1 = " + s1);
         System.out.println("długość s1 = " + s1.length());
         System.out.println(s1.toSvg());
 
         Segment[] odcinki = new Segment[3];
         // (0, 0) -- (0, 40); dlugosc = 40
-        odcinki[0] = new Segment();
-        odcinki[0].a = new Point(); // trzeba utworzyć bo domyślnie jest null
-        odcinki[0].a.setX(0);
-        odcinki[0].a.setY(0);
-        odcinki[0].b = new Point();
-        odcinki[0].b.setX(0);
-        odcinki[0].b.setY(40);
+        odcinki[0] = new Segment(new Point(0, 0), new Point(0, 40));
         // (60, 30) -- (30, 70); dlugosc 50
         odcinki[1] = s1;
         // (0, 0) -- (33, 0)
         odcinki[2] = new Segment();
-        odcinki[2].a = new Point(); // trzeba utworzyć bo domyślnie jest null
-        odcinki[2].a.setX(0);
-        odcinki[2].a.setY(0);
-        odcinki[2].b = new Point();
-        odcinki[2].b.setX(33);
-        odcinki[2].b.setY(0);
+        odcinki[2].setA(new Point(0, 0)); // trzeba utworzyć bo domyślnie jest null
+        odcinki[2].setB(new Point(33, 0));
 
         // metodę statyczną maxLength wywołujemy za pomocą nazwy klasy
         Segment max = Segment.maxLength(odcinki);

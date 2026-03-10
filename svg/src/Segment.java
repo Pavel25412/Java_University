@@ -1,5 +1,34 @@
 public class Segment {
-    public Point a, b;
+    private Point a, b;
+
+    // wygenerowany konstruktor
+    public Segment(Point a, Point b) {
+        this.a = a;
+        this.b = b;
+    }
+
+    public Segment() {
+        // jeśli ktoś nie chce podawać punktów podcza tworzenia
+        // to niech będą null
+        this.a = null;
+        this.b = null;
+    }
+
+    public Point getA() {
+        return a;
+    }
+
+    public void setA(Point a) {
+        this.a = a;
+    }
+
+    public Point getB() {
+        return b;
+    }
+
+    public void setB(Point b) {
+        this.b = b;
+    }
 
     public double length() {
         double dx = b.getX() - a.getX();
