@@ -44,7 +44,7 @@ public class Polygon {
         }
 
         return String.format("<polygon points=\"%s\" " +
-                "style=\"fill:lime;stroke:purple;stroke-width:3\" />",
+                "style=\"\" />",
                 pointsString
                 );
     }
