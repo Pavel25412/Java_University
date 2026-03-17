@@ -12,5 +12,13 @@ public class SvgScene {
         i = (i + 1) % 3;    // zwiększenie o 1 z zapętleniem: 0 -> 1 -> 2 -> 0 -> 1 -> ...
     }
 
+    public String toSvg() {
+        String svg = "";
+        for (Polygon poly : polygons) {
+            if (poly == null) continue; // zabezpieczenie przed pustymi wartościami
 
+            svg += poly.toSvg() + "\n";
+        }
+        return svg;
+    }
 }

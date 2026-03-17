@@ -16,7 +16,23 @@ public class Main2 {
         vertices[0] = new Point(100, 100);
         v2.setY(100);
         System.out.println("Po zmianie: " + poly);
+        System.out.println();
 
+        // Scena SVG
+        SvgScene scene = new SvgScene();
+        scene.addPolygon(poly);
+        scene.addPolygon(new Polygon(new Point[] {
+                new Point(120, 120),
+                new Point(160, 160),
+                new Point(120, 160)
+        }));
+        scene.addPolygon(new Polygon(new Point[] {
+                new Point(10, 100),
+                new Point(20, 200),
+                new Point(80, 160)
+        }));
+
+        System.out.println(scene.toSvg());
 
     }
 }
