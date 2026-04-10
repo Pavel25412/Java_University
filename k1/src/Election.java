@@ -8,6 +8,10 @@ public class Election {
     private List<Candidate> candidates;
     private ElectionTurn firstTurn, secondTurn;
 
+    public List<Candidate> getCandidates() {
+        return candidates;
+    }
+
     public ElectionTurn getFirstTurn() {
         return firstTurn;
     }
@@ -33,7 +37,7 @@ public class Election {
     }
 
     public void populate() {
-        List<Candidate> loaded = populateCandidates("kandydaci.txt");
+        this.candidates = populateCandidates("kandydaci.txt");
     }
 
     public List<Candidate> copyCandidates() {
