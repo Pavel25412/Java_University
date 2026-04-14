@@ -8,5 +8,6 @@ public class Main {
             System.out.println(p);
         }
 
+        Person.fromCsvLine("Marek Kowalski,15.05.1899,25.06.1857,,");
     }
 }
