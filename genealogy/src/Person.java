@@ -20,7 +20,9 @@ public class Person implements Comparable<Person> {
             // wczytujemy linie aż do końca pliku
             // kiedy to metoda readLine() zwróci null
             while ( (line = reader.readLine()) != null) {
-                System.out.println("wczytana linia: " + line);
+                // System.out.println("wczytana linia: " + line);
+                Person parsed = fromCsvLine(line);
+                personList.add(parsed);
             }
 
         } catch (IOException e) {
