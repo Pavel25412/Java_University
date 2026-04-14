@@ -3,10 +3,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class Person implements Comparable<Person> {
     private String name, last_name;
@@ -22,7 +19,15 @@ public class Person implements Comparable<Person> {
             while ( (line = reader.readLine()) != null) {
                 // System.out.println("wczytana linia: " + line);
                 Person parsed = fromCsvLine(line);
+                for (Person p : personList) {
+                    if(Objects.equals(p.name, parsed.name) && Objects.equals(p.last_name, parsed.last_name)){
+                        throw new AmbiguousPersonException(parsed);
+                    }
+                }
+
+
                 personList.add(parsed);
+
             }
 
         } catch (IOException e) {
