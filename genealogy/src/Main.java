@@ -3,7 +3,7 @@
 public class Main {
     public static void main(String[] args) {
         Person p = Person.fromCsvLine(
-                "Anna Dąbrowska,07.02.1930,22.12.1991,Ewa Kowalska,Marek Kowalski"
+                "Tomasz Dąbrowski,24.01.1966,,Anna Dąbrowska,"
         );
         System.out.println(p);
 

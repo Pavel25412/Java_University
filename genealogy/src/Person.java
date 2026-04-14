@@ -18,8 +18,10 @@ public class Person implements Comparable<Person> {
         String birthDayString = elements[1];
         LocalDate birthDay = LocalDate.parse(birthDayString, DateTimeFormatter.ofPattern("dd.MM.yyyy"));
         String deathDayString = elements[2];
-        LocalDate deathDay = LocalDate.parse(deathDayString, DateTimeFormatter.ofPattern("dd.MM.yyyy"));
-
+        LocalDate deathDay = null;
+        if (!deathDayString.isEmpty()) {
+            deathDay = LocalDate.parse(deathDayString, DateTimeFormatter.ofPattern("dd.MM.yyyy"));
+        }
         Person created = new Person(nameParts[0], nameParts[1], birthDay, deathDay);
         return created;
     }
