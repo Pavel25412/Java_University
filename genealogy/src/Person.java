@@ -8,6 +8,13 @@ public class Person implements Comparable<Person>, Serializable {
     private LocalDate birthDayDate, deathDate;
     private Set<Person> children;
 
+    public static String ListToUML (List<Person> personList) {
+        String uml = "@startuml\n";
+        for (Person p : personList) {
+            
+        }
+    }
+
     public static void toBinaryFile(String filePath, List<Person> personList) {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(filePath))) {
             oos.writeObject(personList);
@@ -31,9 +38,7 @@ public class Person implements Comparable<Person>, Serializable {
     public static List<Person> fromCsv(String filePath) {
         List<Person> personList = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
-            String line = reader.readLine(); // tutaj wczyta się linia nagłówka, można zignorować
-            // wczytujemy linie aż do końca pliku
-            // kiedy to metoda readLine() zwróci null
+            String line = reader.readLine();
             while ( (line = reader.readLine()) != null) {
                 // System.out.println("wczytana linia: " + line);
                 Person parsed = fromCsvLine(line);
@@ -67,10 +72,8 @@ public class Person implements Comparable<Person>, Serializable {
     }
 
     public static Person fromCsvLine(String line) {
-        // rodzielanie linii csv na elementy
         String[] elements = line.split(",", -1);
         String fullName = elements[0];
-        // rozdzielanie na imie i nazwisko
         String[] nameParts = fullName.split(" ", 2);
 
         String birthDayString = elements[1];
