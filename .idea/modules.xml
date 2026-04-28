@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/OOP1_26.iml" filepath="$PROJECT_DIR$/OOP1_26.iml" />
+      <module fileurl="file://$PROJECT_DIR$/genealogy/genealogy.iml" filepath="$PROJECT_DIR$/genealogy/genealogy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/generic/generic.iml" filepath="$PROJECT_DIR$/generic/generic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/k1/k1.iml" filepath="$PROJECT_DIR$/k1/k1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/svg/svg.iml" filepath="$PROJECT_DIR$/svg/svg.iml" />
+    </modules>
+  </component>
+</project>
