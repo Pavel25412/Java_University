@@ -1,4 +1,6 @@
-public class CustomList<T> {
+import java.util.AbstractList;
+
+public class CustomList<T> extends AbstractList<T> {
     private static class Node<T> {
         private T value;
         private Node<T> next;
@@ -18,6 +20,12 @@ public class CustomList<T> {
 
     @Override
     public int size() {
+        int counter = 0;
+        while (true) {
+            if (this.head.next != null) {
+                counter++;
+            }
+        }
         return 0;
     }
 
