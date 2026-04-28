@@ -16,6 +16,22 @@ public class CustomList<T> {
         this.head = this.tail = null;
     }
 
+    @Override
+    public int size() {
+        return 0;
+    }
+
+    @Override
+    public T get(int i) {
+        return null;
+    }
+
+    @Override
+    public boolean add(T t) {
+        addLast(t);
+        return true;
+    }
+
     public void addLast(T value) {
         Node<T> newNode = new Node<>(value);
         if (tail == null) {
